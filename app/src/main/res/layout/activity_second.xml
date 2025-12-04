@@ -1,10 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/main"
+    android:layout_margin="30sp"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".secondActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <EditText
+        android:id="@+id/firstext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit Text"
+        android:textSize="28sp"/>
+    <EditText
+        android:id="@+id/secondage"
+        android:layout_below="@+id/firstext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Age"
+        android:textSize="28sp"/>
+    <EditText
+        android:id="@+id/thirdphone"
+        android:layout_below="@+id/secondage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Number"
+        android:textSize="28sp"/>
+    <EditText
+        android:id="@+id/forthweight"
+        android:layout_below="@+id/firstext"
+        android:layout_marginLeft="20dp"
+        android:layout_toEndOf="@+id/secondage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Weight"
+        android:textSize="28sp"/>
+    <Spinner
+        android:id="@+id/idspin"
+        android:layout_below="@+id/thirdphone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/MyDropDown"
+        android:layout_marginBottom="12dp">
+
+    </Spinner>
+
+    <RadioGroup
+        android:id="@+id/radiogroup"
+        android:layout_toEndOf="@+id/idspin"
+        android:layout_marginLeft="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/thirdphone"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Male"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Female"/>
+    </RadioGroup>
+    <Button
+        android:id="@+id/verify"
+        android:layout_below="@+id/radiogroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="verify"/>
+
+
+
+</RelativeLayout>
