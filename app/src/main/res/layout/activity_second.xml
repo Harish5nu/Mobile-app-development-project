@@ -13,21 +13,23 @@
         android:id="@+id/firstext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Edit Text"
+        android:hint="Edit Text"
         android:textSize="28sp"/>
     <EditText
         android:id="@+id/secondage"
         android:layout_below="@+id/firstext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter Age"
+        android:hint="Enter Age"
+        android:inputType="number"
         android:textSize="28sp"/>
     <EditText
         android:id="@+id/thirdphone"
         android:layout_below="@+id/secondage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter Number"
+        android:hint="Enter Number"
+        android:inputType="phone"
         android:textSize="28sp"/>
     <EditText
         android:id="@+id/forthweight"
@@ -36,7 +38,8 @@
         android:layout_toEndOf="@+id/secondage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter Weight"
+        android:hint="Enter Weight"
+        android:inputType="number"
         android:textSize="28sp"/>
     <Spinner
         android:id="@+id/idspin"
