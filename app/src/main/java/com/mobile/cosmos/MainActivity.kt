@@ -63,6 +63,17 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Accept terms and conditions", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
+            if(selectedGroup==-1){
+                Toast.makeText(this, "Select Gender", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            //**-------DATA PASS-------**//
+            val intent= Intent(this, ProfileActivity::class.java)
+            intent.putExtra("name",name)
+            intent.putExtra("address",phone)
+            intent.putExtra("email",email)
+            intent.putExtra("pnone",phone)
+            startActivity(intent)
 
         }
 
