@@ -3,6 +3,9 @@ package com.mobile.cosmos
 import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
+import android.widget.FrameLayout
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.activity.addCallback
@@ -12,6 +15,7 @@ import androidx.core.view.GravityCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.Fragment
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.navigation.NavigationView
 
@@ -79,6 +83,8 @@ class DashboardActivity : AppCompatActivity() {
         profile.setOnClickListener {
             val intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.slide_in, R.anim.slide_out)
+
         }
 
         val course = findViewById<LinearLayout>(R.id.layoutCourses)
@@ -86,7 +92,23 @@ class DashboardActivity : AppCompatActivity() {
             val intent = Intent(this, CourseActivity::class.java)
             startActivity(intent)
         }
+        val result=findViewById<LinearLayout>(R.id.layoutResult)
+        val attendence=findViewById<LinearLayout>(R.id.layoutAttendance)
+        val dashboardContent=findViewById<LinearLayout>(R.id.dashboardContent)
+        val btnRegisterStudent=findViewById<Button>(R.id.btnRegisterStudent)
 
+        btnRegisterStudent.setOnClickListener {
+            val intent=Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+        result.setOnClickListener {
+            showDemofragment(result())
+            dashboardContent.visibility= View.GONE
+        }
+        attendence.setOnClickListener {
+            showDemofragment(fragment = attendence())
+            dashboardContent.visibility= View.GONE
+        }
 
     }
 
@@ -101,6 +123,22 @@ class DashboardActivity : AppCompatActivity() {
             dialog.dismiss()
         }
         exitDialog.show()
+
+    }
+    fun showDemofragment(fragment: Fragment){
+        val container= findViewById<FrameLayout>(R.id.demoFragment)
+        container.visibility= View.VISIBLE
+
+        supportFragmentManager.beginTransaction()
+            .setCustomAnimations(
+                R.anim.slide_in,
+                R.anim.slide_out,
+                R.anim.slide_in,
+                R.anim.slide_out
+            )
+            .add(R.id.demoFragment, fragment)
+            .addToBackStack(null)
+            .commit()
 
     }
 }

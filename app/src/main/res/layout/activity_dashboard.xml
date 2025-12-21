@@ -6,6 +6,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <FrameLayout
+        android:id="@+id/demoFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
     <!-- MAIN CONTENT -->
     <LinearLayout
         android:orientation="vertical"
@@ -26,6 +31,7 @@
 
 
             <LinearLayout
+                android:id="@+id/dashboardContent"
                 android:orientation="vertical"
                 android:padding="16dp"
                 android:layout_width="match_parent"
@@ -148,6 +154,15 @@
                     </LinearLayout>
 
                 </LinearLayout>
+                <FrameLayout
+                    android:id="@+id/btnRegisterStudent"
+                    android:layout_marginTop="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    text="registration from">
+
+                </FrameLayout>
+
             </LinearLayout>
 
 
